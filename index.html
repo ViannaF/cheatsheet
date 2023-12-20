@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector Reference</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#simple">Simple Selectors</a></li>
+                <li><a href="#combinator">Combinator Selectors</a></li>
+                <li><a href="#classes">Pseudo Classes</a></li>
+                <li><a href="#elements">Pseudo Elements</a></li>
+            </ul>
+        </nav>
+        <h1>CSS Selector Reference</h1>
+    </header>
+    <main>
+      <section>
+        <h2 id="simple">Simple Selectors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Selector</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th>Example Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>element</code> &#40;Type&#41;</td>
+                    <td>Selects HTML elements by element name</td>
+                    <td><code>p</code></td>
+                    <td>Selects all <code>&lt;p&gt;</code> elements</td>
+                </tr>
+                <tr>
+                    <td><code>#id</code></td>
+                    <td>Selects an element by its unique id attribute</td>
+                    <td><code>#cheatsheat</code></td>
+                    <td>Selects the element with id=cheatsheat</td>
+                </tr>
+                <tr>
+                    <td><code>.class</code></td>
+                    <td>Selects elements by class atrribute</td>
+                    <td><code>.container</code></td>
+                    <td>Selects all elements with class=container</td>
+                </tr>
+                <tr>
+                    <td><code>*</code> &#40;Universal&#41;</td>
+                    <td>affects every HTML element on the page</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><code>element.class</code> &#40;Chaining Selectors&#41;</td>
+                    <td>Selects only elements that fulfill all criteria specified</td>
+                    <td><code>p.simple</code></td>
+                    <td>Selects &lt;p&gt; elements with class=simple</td>
+                </tr>
+                <tr>
+                    <td><code>element,element</code> &#40;Grouping Selector&#41;</td>
+                    <td>Selects elements to which the same ruleset will be applied</td>
+                    <td><code>h1, h2, p</code></td>
+                    <td>Selects all <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> and <code>&lt;p&gt;</code> elements</td>
+                </tr>
+            </tbody>
+        </table>
+      </section>
+      <section>
+        <h2 id="combinator">Combinator Selectors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Selector</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th>Example Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>element element</code> &#40;Descendant Selector&#41;</td>
+                    <td>Selects elements that are descendents of specified element</td>
+                    <td><code>div p</code></td>
+                    <td>Selects all <code>&lt;p&gt;</code> elements that are inside <code>&lt;div&gt;</code> elements</td>
+                </tr>
+                <tr>
+                    <td><code>element>element</code> &#40;Child Selector&#41;</td>
+                    <td>Selects elements that are children of specified element</td>
+                    <td><code>div > p</code></td>
+                    <td>Selects all <code>&lt;p&gt;</code> elements that are children of a <code>&lt;div&gt;</code> element</td>
+                </tr>
+                <tr>
+                    <td><code>element+element</code> &#40;Adjacent Sibling Selector&#41;</td>
+                    <td>Selects an element immediately following another element. Both elements must share the same parent element.</td>
+                    <td><code>div + p</code></td>
+                    <td>Selects the first &lt;p&gt; element that directly follows the &lt;div&gt; element.</td>
+                </tr>
+                <tr>
+                    <td><code>element1~element2</code> &#40;General Sibling Selector&#41;</td>
+                    <td>Selects all elements that are next siblings of an element</td>
+                    <td><code>div ~ p</code></td>
+                    <td>Selects all &lt;p&gt; elements that follow the &lt;div&gt; element</td>
+                </tr>
+            </tbody>
+        </table>
+      </section>
+      <section>
+        <h2 id="classes">Pseudo Classes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Selector</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th>Example Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>:active</code></td>
+                    <td>Selects an active element</td>
+                    <td><code>a:active</code></td>
+                    <td>Selects the active link</td>
+                </tr>
+                <tr>
+                    <td><code>:checked</code></td>
+                    <td>Selects every checked <code>&lt;input&gt;</code> element</td>
+                    <td><code>input:checked</code></td>
+                    <td>Selects every checked <code>&lt;input&gt;</code> element</td>
+                </tr>
+                <tr>
+                    <td><code>:disabled</code></td>
+                    <td>Selects every disabled <code>&lt;input&gt;</code> element</td>
+                    <td><code>input:disabled</code></td>
+                    <td>Selects every disabled <code>&lt;input&gt;</code> element</td>
+                </tr>
+                <tr>
+                    <td><code>:empty</code></td>
+                    <td>Selects the specified elements with no children</td>
+                    <td><code>p:empty</code></td>
+                    <td>Selects every <code>&lt;p&gt;</code> element with no children</td>
+                </tr>
+                <tr>
+                    <td><code>:enabled</code></td>
+                    <td>Selects every enabled <code>&lt;input&gt;</code> element</td>
+                    <td><code>input:enabled</code></td>
+                    <td>Selects every enabled <code>&lt;input&gt;</code> element</td>
+                </tr>
+                <tr>
+                    <td><code>:first-child</code></td>
+                    <td>Selects the specified element that is the first-child of another element</td>
+                    <td><code>p:first-child</code></td>
+                    <td>Selects every <code>&lt;p&gt;</code> element that is the first child of its parent</td>
+                </tr>
+                <tr>
+                    <td><code>:first-of-type</code></td>
+                    <td>Selects the first element of its type among a group of sibling elements</td>
+                    <td><code>p:first-of-type</code></td>
+                    <td>Selects every <code>&lt;p&gt;</code> element that is the first <code>&lt;p&gt;</code> element of its parent</td>
+                </tr>
+                <tr>
+                    <td><code>:focus</code></td>
+                    <td>Selects an element that has focus</td>
+                    <td><code>input:focus</code></td>
+                    <td>Selects the <code>&lt;input&gt;</code> element that has focus</td>
+                </tr>
+                <tr>
+                    <td><code>:hover</code></td>
+                    <td>Selects element when cursor (mouse pointer) hovers over it</td>
+                    <td><code>a:hover</code></td>
+                    <td>Selects a link on mouse over</td>
+                </tr>
+                <tr>
+                    <td><code>:in-range</code></td>
+                    <td>Selects <code>&lt;input&gt;</code> elements with a value in the specified range</td>
+                    <td><code>input:in-range</code></td>
+                    <td>Selects <code>&lt;input&gt;</code> elements with a value in the specified range</td>
+                </tr>
+                <tr>
+                    <td><code>:invalid</code></td>
+                    <td>Selects any <code>&lt;form&gt;</code>, <code>&lt;fieldset&gt;</code>, <code>&lt;input&gt;</code> or other <code>&lt;form&gt;</code> element whose content fails to validate</td>
+                    <td><code>input:invalid</code></td>
+                    <td>Selects all <code>&lt;input&gt;</code> elements with an invalid value</td>
+                </tr>
+                <tr>
+                    <td><code>:lang(language)</code></td>
+                    <td>Selects elements in certain languages</td>
+                    <td><code>p:lang(it)</code></td>
+                    <td>Selects every <code>&lt;p&gt;</code> element that has a language starting with "it"</td>
+                </tr>
+                <tr>
+                    <td><code>:last-child</code></td>
+                    <td>Selects the specified element that is the last-child of another element</td>
+                    <td><code>p:last-child</code></td>
+                    <td>Selects every <code>&lt;p&gt;</code> element that is the last child of its parent</td>
+                </tr>
+                <tr>
+                    <td><code>:last-of-type</code></td>
+                    <td>Selects the last element of its type among a group of sibling elements</td>
+                    <td><code>p:first-of-type</code></td>
+                    <td>Selects every <code>&lt;p&gt;</code> element that is the last child of its parent</td>
+                </tr>
+                <tr>
+                    <td><code>:link</code></td>
+                    <td>Selects an element that has not been visited yet</td>
+                    <td><code>a:link</code></td>
+                    <td>Selects all unvisited links</td>
+                </tr>
+                <tr>
+                    <td><code>:not()</code></td>
+                    <td>Selects all elements that are not the specified element</td>
+                    <td><code>:not(p)</code></td>
+                    <td>Selects every element that is not a <code>&lt;p&gt;</code> element</td>
+                </tr>
+                <tr>
+                    <td><code>:nth-child(n)</code></td>
+                    <td>Selects elements based on the order they appear in the list of children of their parent</td>
+                    <td><code>p:nth-child(3)</code></td>
+                    <td>Selects every <code>&lt;p&gt;</code> element that is the third child of its parent</td>
+                </tr>
+                <tr>
+                    <td><code>:nth-last-child(n)</code></td>
+                    <td>Selects elements based on the order they appear in the list of children of their parents counting from the last child</td>
+                    <td><code>p:nth-last-child(3)</code></td>
+                    <td>Selects every <code>&lt;p&gt;</code> element that is the third child of its parent counting from the end</td>
+                </tr>
+                <tr>
+                    <td><code>:nth-last-of-type(n)</code></td>
+                    <td>Selects elements based on their position in a list of sibling elements of the same type, counting from the last child</td>
+                    <td><code>p:nth-last-of-type(3)</code></td>
+                    <td>Selects every <code>&lt;p&gt;</code> element that is the third <code>&lt;p&gt;</code> element of its parent, counting from the end</td>
+                </tr>
+                <tr>
+                    <td><code>:nth-of-type(n)</code></td>
+                    <td>Selects elements based on their position in a list of sibling elements of the same type</td>
+                    <td><code>p:nth-last-of-type(3)</code></td>
+                    <td>Selects every <code>&lt;p&gt;</code> element that is the third <code>&lt;p&gt;</code> element of its parent</td>
+                </tr>
+                <tr>
+                    <td><code>:only-of-type</code></td>
+                    <td>Selects elements that have no other siblings of the same type</td>
+                    <td><code>p:only-of-type</code></td>
+                    <td>Selects every <code>&lt;p&gt;</code> element that is the only <code>&lt;p&gt;</code> element of its parent</td>
+                </tr>
+                <tr>
+                    <td><code>:only-child</code></td>
+                    <td>Selects an element that is the only child of its parent element</td>
+                    <td><code>p:only-child</code></td>
+                    <td>Selects every <code>&lt;p&gt;</code> element that is an only child of its parent element</td>
+                </tr>
+                <tr>
+                    <td><code>:optional</code></td>
+                    <td>Selects any <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code> or <code>&lt;textarea&gt;</code> element that does not have the "required" attribute set</td>
+                    <td><code>input:optional</code></td>
+                    <td>Selects <code>&lt;input&gt;</code> elements that do not have the <code>required</code> attribute set</td>
+                </tr>
+                <tr>
+                    <td><code>:out-of-range</code></td>
+                    <td>Selects an <code>&lt;input&gt;</code> element whose current value is outside the range set by the <code>min</code> and <code>max</code> attributes</td>
+                    <td><code>input:out-of-range</code></td>
+                    <td>Selects <code>&lt;input&gt;</code> elements whose current value is outside the specified range</td>
+                </tr>
+                <tr>
+                    <td><code>:read-only</code></td>
+                    <td>Selects an element that the user cannot edit</td>
+                    <td><code>input:read-only</code></td>
+                    <td>Selects <code>&lt;input&gt;</code> elements with the <code>readonly</code> attribute specified</td>
+                </tr>
+                <tr>
+                    <td><code>:read-write</code></td>
+                    <td>Selects an element that the user can edit</td>
+                    <td><code>input:read-write</code></td>
+                    <td>Selects <code>&lt;input&gt;</code> elements that do not have the <code>readonly</code> attribute specified</td>
+                </tr>
+                <tr>
+                    <td><code>:required</code></td>
+                    <td>Selects elements that have the <code>required</code> attribute set</td>
+                    <td><code>input:required</code></td>
+                    <td>Selects <code>&lt;input&gt;</code> elements that have the <code>required</code> attribute specified</td>
+                </tr>
+                <tr>
+                    <td><code>:root</code></td>
+                    <td>Selects the root element of the document. In <code>HTML</code> this is identical to the <code>html</code> selector but has higher specificity</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><code>:target</code></td>
+                    <td>Selects a <code>target</code> that has an id matching the URL's fragment</td>
+                    <td>#info:target</td>
+                    <td>Selects the target (that has a matching id attribute) of the <code>#info</code> element when active</td>
+                </tr>
+                <tr>
+                    <td><code>:valid</code></td>
+                    <td>Selects any <code>input</code> or <code>form</code> elements whose contents validate successfully</td>
+                    <td>input:valid</td>
+                    <td>Selects <code>&lt;input&gt;</code> elements with a valid value</td>
+                </tr>
+                <tr>
+                    <td><code>:visited</code></td>
+                    <td>Selects links that have been visited by the user </td>
+                    <td>a:visited</td>
+                    <td>Selects visited links</td>
+                </tr>
+            </tbody>
+        </table>
+      </section>
+      <section>
+        <h2 id="elements">Pseudo-elements</h2>
+        <table>
+            <thead>
+                <tr>
+                  <th>Selector</th>
+                  <th>Description</th>
+                  <th>Example</th>
+                  <th>Example Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td><code>::after</code></td>
+                  <td>Used to insert content after the content of an element</td>
+                  <td><code>p::after</code></td>
+                  <td>Insert content after the content of each <code>&lt;p&gt;</code> element</td>
+                </tr>
+                <tr>
+                  <td><code>::before</code></td>
+                  <td>Used to insert content before the content of an element</td>
+                  <td><code>p::before</code></td>
+                  <td>Insert content before the content of each <code>&lt;p&gt;</code> element</td>
+                </tr>
+                <tr>
+                    <td><code>::first-letter</code></td>
+                    <td>Selects the first letter of the first line of a block level element</td>
+                    <td><code>p::first-letter</code></td>
+                    <td>Selects the first letter of all <code>&lt;p&gt;</code> elements</td>
+                </tr>
+                <tr>
+                    <td><code>::first-line</code></td>
+                    <td>Selects the first line of a block level element</td>
+                    <td><code>p::first-line</code></td>
+                    <td>Selects the first line of all <code>&lt;p&gt;</code> elements</td>
+                </tr>
+                <tr>
+                    <td><code>::marker</code></td>
+                    <td>Selects the marker box of a list item</td>
+                    <td><code>li::marker</code></td>
+                    <td>Selects the markers of <code>&lt;li&gt;</code> elements</td>
+                </tr>
+                <tr>
+                    <td><code>::selection</code></td>
+                    <td>Selects the part of the document that has been highlighted by the user</td>
+                    <td><code>p::selection</code></td>
+                    <td>Selects part of <code>&lt;p&gt;</code> element highlighted by user</td>
+                </tr>
+            </tbody>
+        </table>
+      </section>
+    </main>
+</body>
+</html>
